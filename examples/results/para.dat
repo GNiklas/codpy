@@ -1,0 +1,10 @@
+used detection parameters
+meanRefH: 170
+stdRefH: 10
+factor: 1.0
+stdX: 5
+stdY: 5
+loThresh: 100
+hiThresh: 200
+dilIter: 2
+eroIter: 2
