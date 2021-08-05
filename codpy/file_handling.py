@@ -82,7 +82,7 @@ def saveResults(outDir, results):
 
     """
     
-    header = 'imgName nTotObj nColObj\n'
+    header = 'imgName nObj nColObj\n'
     
     # check, if output dir exists
     if not os.path.isdir(outDir):

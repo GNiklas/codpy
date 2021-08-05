@@ -11,8 +11,8 @@ import os
 
 import cv2
 
-import file_handling as fh
-from mouse import Callbacks
+import codpy.file_handling as fh
+from codpy.mouse import Callbacks
 
 
 class Selector():
