@@ -17,7 +17,7 @@ from codpy.mouse import Callbacks
 
 class Selector():
     """
-    Class for manual coloured object selection.
+    Class for manual colored object selection.
     
     """
     
@@ -54,7 +54,7 @@ class Selector():
                               colObjCen = []):
         
         """
-        Select centers of coloured and uncoloured objects by mouseclick.
+        Select centers of colored and uncolored objects by mouseclick.
         
         Parameters
         ----------
@@ -63,7 +63,7 @@ class Selector():
         uncObjCen : list, optional
             centers of uncloured objects. The default is [].
         colObjCen : list, optional
-            centers of coloured objects. The default is [].
+            centers of colored objects. The default is [].
             
         Returns
         -------
@@ -72,7 +72,7 @@ class Selector():
         uncObjCen : list
             centers of uncloured objects.
         colObjCen : list
-            centers of coloured objects.
+            centers of colored objects.
         
         """
         
@@ -114,7 +114,7 @@ class Selector():
         
     def select(self, relInDir='data', relOutDir = 'results'):
         """
-        Coloured object selection routine using mouse callbacks.
+        colored object selection routine using mouse callbacks.
 
         Parameters
         ----------

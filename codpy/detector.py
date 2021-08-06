@@ -38,7 +38,7 @@ class Detector(Selector):
         stdRefH : float, optional
             standard deviation of reference H color value. The default is 10.
         factor : float, optional
-            color limit factor in coloured contour detection.
+            color limit factor in colored contour detection.
         boxSize : int, optional
             side length of bounding boxes. The default is 10.
         lineWidth : int, optional
@@ -53,7 +53,7 @@ class Detector(Selector):
         # call inherited constructor
         Selector.__init__(self, boxSize, lineWidth)
         
-        # additional variables for colour detection
+        # additional variables for color detection
         self.meanRefH = meanRefH
         self.stdRefH = stdRefH
         self.factor = factor
@@ -63,8 +63,8 @@ class Detector(Selector):
                          contours,                            
                          centers):
         """
-        Select centers of coloured objects. Mean and standard deviation of reference
-        H color value will be used to distinguish from non-coloured contours.
+        Select centers of colored objects. Mean and standard deviation of reference
+        H color value will be used to distinguish from non-colored contours.
 
         Parameters
         ----------
@@ -78,9 +78,9 @@ class Detector(Selector):
         Returns
         -------
         uncObjCen : list
-            centers of uncoloured objects.
+            centers of uncolored objects.
         colObjCen : list
-            centers of coloured objects.
+            centers of colored objects.
 
         """
         
@@ -92,7 +92,7 @@ class Detector(Selector):
         imgHSV = cv2.cvtColor(imgIn,
                               cv2.COLOR_BGR2HSV)
         
-        # lists of centers of uncoloured and coloured objects
+        # lists of centers of uncolored and colored objects
         uncObjCen = centers.copy()
         colObjCen = []
                 
@@ -111,7 +111,7 @@ class Detector(Selector):
                 (meanH <= (self.meanRefH + self.factor * self.stdRefH))):
                 colObjCen.append(centers[i])
         
-        # delete coloured objects from uncoloured ones        
+        # delete colored objects from uncolored ones        
         for x in colObjCen:
             uncObjCen.remove(x)
             

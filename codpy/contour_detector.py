@@ -43,7 +43,7 @@ class ContourDetector(Detector):
         stdRefH : float, optional
             standard deviation of reference H color value. The default is 10.
         factor : float, optional
-            color limit factor in coloured contour detection.
+            color limit factor in colored contour detection.
         boxSize : int, optional
             side length of bounding boxes. The default is 10.
         lineWidth : int, optional
@@ -242,7 +242,7 @@ class ContourDetector(Detector):
                 # extract object centers
                 centers = self.extractCenters(contours)
                 
-                # select coloured objects
+                # select colored objects
                 uncObjCen, colObjCen = self.selectColObjCen(imgIn,
                                                             contours,
                                                             centers)
