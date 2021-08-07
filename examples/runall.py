@@ -11,5 +11,6 @@ from codpy.contour_detector import ContourDetector
 
 detector = ContourDetector(meanRefH = 170,
                            stdRefH = 10,
-                           boxSize=30.)
+                           boxSize = 30.)
+
 detector.detect()

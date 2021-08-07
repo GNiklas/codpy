@@ -98,7 +98,7 @@ class Selector():
             if key == ord("d"):
                 mouseCallback.setCenters([], [])
                 
-            # leave on return
+            # accept selection on return/enter
             if key == ord("\r"):
                 break
             
@@ -135,14 +135,14 @@ class Selector():
         # absolute input and output directories
         inDir = os.getcwd() + os.sep + relInDir
         outDir = os.getcwd() + os.sep + relOutDir
-        
+            
         # go through all images in input dir
         for imgFile in os.listdir(inDir):
             if imgFile.endswith('.jpg'):
                 
                 # read input image
                 imgIn = fh.readImgIn(inDir, imgFile)
-                
+
                 # manually select objects
                 imgOut, uncObjCen, colObjCen = self.manuallySelectCenters(imgIn)
                 

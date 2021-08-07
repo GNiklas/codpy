@@ -228,11 +228,11 @@ class ContourDetector(Detector):
         # absolute input and output directories
         inDir = os.getcwd() + os.sep + relInDir
         outDir = os.getcwd() + os.sep + relOutDir
-        
+
         # go through all images in input dir
         for imgFile in os.listdir(inDir):
             if imgFile.endswith('.jpg'):
-                
+            
                 # read input image
                 imgIn = fh.readImgIn(inDir, imgFile)
                 

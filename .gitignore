@@ -3,4 +3,5 @@ codpy.egg-info/
 dist/
 __pycache__
 .spyproject/
+tests/
 ToDo.txt
