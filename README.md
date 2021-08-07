@@ -77,6 +77,8 @@ Manually (de-) select objects by mouseclick
 
 * ENTER: accept selection and go to next image
 
+* q: exit processing. dismiss selection on current image.
+
 ### In- and Output
 
 By default, input files are sought in data/. All .jpg files within the input directory are read. Output files are written to results/ by default. Output to each input file are 

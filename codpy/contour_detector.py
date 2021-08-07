@@ -223,11 +223,11 @@ class ContourDetector(Detector):
         """
 
         # results to save
-        results = []
+        self.results = []
         
         # absolute input and output directories
         inDir = os.getcwd() + os.sep + relInDir
-        outDir = os.getcwd() + os.sep + relOutDir
+        self.outDir = os.getcwd() + os.sep + relOutDir
 
         # go through all images in input dir
         for imgFile in os.listdir(inDir):
@@ -253,14 +253,14 @@ class ContourDetector(Detector):
                                                                       uncObjCen,
                                                                       colObjCen)
                 
-                fh.saveImgOut(outDir, imgFile, imgOut)
+                fh.saveImgOut(self.outDir, imgFile, imgOut)
                 
                 # all object centers
                 centers = uncObjCen + colObjCen
 
                 # append results of image to list
-                results.append([imgFile, str(len(centers)), str(len(colObjCen))])
+                self.results.append([imgFile, str(len(centers)), str(len(colObjCen))])
 
         # save results and used parameters to files
-        fh.saveResults(outDir, results)
-        self.saveParameters(outDir)
+        fh.saveResults(self.outDir, self.results)
+        self.saveParameters(self.outDir)

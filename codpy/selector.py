@@ -8,6 +8,7 @@ Created on Thu Aug  5 13:13:27 2021
 
 
 import os
+import sys
 
 import cv2
 
@@ -47,7 +48,30 @@ class Selector():
         self.boxColorUncolObj = (125, 125, 125)
         # red
         self.boxColorColObj = (0, 0, 255)
-    
+
+        # needed as object variables for use in escape method
+        self.results = []
+        self.outDir = ""
+        
+    def escape(self):
+        """
+        Manually escape from process, saving results until here.
+
+        Returns
+        -------
+        None.
+
+        """
+        
+        # close remaining windows
+        cv2.destroyAllWindows()
+        
+        # save results to files
+        fh.saveResults(self.outDir, self.results)
+        
+        # exit process
+        sys.exit("Manually exited script.")
+        
     def manuallySelectCenters(self,
                               imgIn,
                               uncObjCen = [],
@@ -102,6 +126,10 @@ class Selector():
             if key == ord("\r"):
                 break
             
+            # exit on "q", dismissing selection on current image
+            if key == ord("q"):
+                self.escape()
+                
         # get marked object centers
         uncObjCen, colObjCen = mouseCallback.getCenters()
 
@@ -130,11 +158,11 @@ class Selector():
         """
 
         # results to save
-        results = []
+        self.results = []
         
         # absolute input and output directories
         inDir = os.getcwd() + os.sep + relInDir
-        outDir = os.getcwd() + os.sep + relOutDir
+        self.outDir = os.getcwd() + os.sep + relOutDir
             
         # go through all images in input dir
         for imgFile in os.listdir(inDir):
@@ -146,13 +174,13 @@ class Selector():
                 # manually select objects
                 imgOut, uncObjCen, colObjCen = self.manuallySelectCenters(imgIn)
                 
-                fh.saveImgOut(outDir, imgFile, imgOut)
+                fh.saveImgOut(self.outDir, imgFile, imgOut)
                 
                 # all object centers
                 centers = uncObjCen + colObjCen
 
                 # append results of image to list
-                results.append([imgFile, str(len(centers)), str(len(colObjCen))])
+                self.results.append([imgFile, str(len(centers)), str(len(colObjCen))])
             
         # save results and used parameters to files
-        fh.saveResults(outDir, results)
+        fh.saveResults(self.outDir, self.results)

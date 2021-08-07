@@ -8,10 +8,12 @@ Created on Thu Aug  5 13:32:09 2021
 
 
 import os
+import sys
 import numpy as np
 
 import cv2
 
+import codpy.file_handling as fh
 from codpy.selector import Selector
 
 
@@ -58,6 +60,26 @@ class Detector(Selector):
         self.stdRefH = stdRefH
         self.factor = factor
 
+    def escape(self):
+        """
+        overload escape method to include saving detection parameters.
+
+        Returns
+        -------
+        None.
+
+        """
+        
+        # close remaining windows
+        cv2.destroyAllWindows()
+        
+        # save results and used parameters to files
+        fh.saveResults(self.outDir, self.results)
+        self.saveParameters(self.outDir)
+        
+        # exit process
+        sys.exit("Manually exited script.")
+        
     def selectColObjCen(self,
                          imgIn,
                          contours,                            
