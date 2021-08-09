@@ -1,6 +1,6 @@
 # codpy
 
-Colored object detection with Python.
+Colored object detection with Python and OpenCV.
 
 ## Goals
 
@@ -9,32 +9,39 @@ Save images containing marked objects and results files.
 
 ## Requirements
 
-Python 3.9 was used. The following libraries are needed:
+Python 3.9 was used. The following libraries are imported:
 
 * os
+* sys
 * numpy
 * cv2
 
 ## Installation
 
+* if not done, install [numpy](https://numpy.org/install/), [opencv and opencv_contrib](https://docs.opencv.org/4.5.2/df/d65/tutorial_table_of_content_introduction.html)
+
 * clone the repository to your local workspace
+
+```
+$ git clone https://github.com/GNiklas/codpy.git
+```
 
 * go to your local codpy repository
 
 ```
-cd your/local/codpy
+$ cd your/local/codpy
 ```
 
-* install using setup
+* install codpy using setup
 
 ```
-python setup.py install
+$ python setup.py install
 ```
 
 * uninstall using pip
 
 ```
-pip uninstall codpy
+$ pip uninstall codpy
 ```
 
 ## Running the Tests
@@ -57,7 +64,7 @@ from codpy.contour_detector import ContourDetector
 detector = ContourDetector(meanRefH = 170, stdRefH = 10, boxSize=30.)
 ```
 
-* start detection, optionally giving relative input ans output directories
+* start detection, optionally giving relative input and output directories
 
 ```
 detector.detect(relInDir='data', relOutDir = 'results')
