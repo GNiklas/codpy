@@ -21,21 +21,21 @@ Python 3.9 was used. The following libraries are needed:
 
 * go to your local codpy repository
 
-'''
+```
 cd your/local/codpy
-'''
+```
 
 * install using setup
 
-'''
+```
 python setup.py install
-'''
+```
 
 * uninstall using pip
 
-'''
+```
 pip uninstall codpy
-'''
+```
 
 ## Running the Tests
 
