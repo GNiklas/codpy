@@ -12,7 +12,7 @@ from setuptools import setup
 
 setup(
     name='codpy',
-    version='0.1',
+    version='1.0',
     description='automated coloured object detection',
     author='Niklas Guenther',
     author_email='gnthrn@gmail.com',

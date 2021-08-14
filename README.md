@@ -104,3 +104,9 @@ Example data and a run file are given in examples/
 Bradski, G. (2000).
 The OpenCV Library.
 Dr. Dobb's Journal of Software Tools.
+
+<a id="2">[2]</a>
+Harris, C.R., Millman, K.J., van der Walt, S.J. et al. (2020).
+Array programming with NumPy.
+Nature 585, 357–362.
+DOI: 0.1038/s41586-020-2649-2
